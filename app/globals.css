@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+ 
+@layer base {
+  :root {
+    --background: 40 30% 96%;
+    --foreground: 220 10% 10%;
+
+    --muted: 40 20% 90%;
+    --muted-foreground: 220 10% 40%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 10% 10%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 10% 10%;
+
+    --border: 27 100% 84%;  /* #FFD3AC */
+    --input: 220 20% 80%;
+
+    --primary: 220 70% 50%;
+    --primary-foreground: 220 10% 98%;
+
+    --secondary: 40 30% 80%;
+    --secondary-foreground: 220 10% 10%;
+
+    --accent: 40 40% 70%;
+    --accent-foreground: 220 10% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --ring: 220 70% 50%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 260 20% 10%;
+    --foreground: 260 20% 90%;
+
+    --muted: 260 20% 20%;
+    --muted-foreground: 260 20% 70%;
+
+    --popover: 260 20% 10%;
+    --popover-foreground: 260 20% 90%;
+
+    --card: 260 20% 15%;
+    --card-foreground: 260 20% 90%;
+
+    --border: 270 100% 70%;  /* Brighter purple color for better visibility */
+    --input: 260 20% 25%;
+
+    --primary: 260 70% 50%;
+    --primary-foreground: 260 20% 98%;
+
+    --secondary: 260 30% 30%;
+    --secondary-foreground: 260 20% 98%;
+
+    --accent: 260 50% 40%;
+    --accent-foreground: 260 20% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 260 20% 98%;
+
+    --ring: 260 70% 50%;
+  }
+}
+ 
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+.section-padding {
+  @apply py-16 px-4 sm:px-6 lg:px-8;
+}
+
+.profile-image {
+  @apply relative;
+  transition: transform 0.3s ease;
+}
+
+.profile-image:hover {
+  transform: scale(1.02);
+}
+
