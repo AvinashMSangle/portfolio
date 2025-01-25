@@ -1,12 +1,15 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
 
 export function Hero() {
   return (
-    <section id="hero" className="relative min-h-screen flex items-center overflow-hidden">
+    <section
+      id="hero"
+      className="relative min-h-screen flex items-center overflow-hidden"
+    >
       <div className="absolute inset-0 z-0">
         <Image
           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/1bg-port.jpg-lZm57X2eWfAYqlcwwvUzq8XoPOqrWV.jpeg"
@@ -28,33 +31,39 @@ export function Hero() {
             Hi! I'm Avinash Sangle
           </h1>
           <p className="text-xl text-muted-foreground mb-6">
-            A passionate web developer who transforms ideas into interactive web experiences.
+            A passionate web developer who transforms ideas into interactive web
+            experiences.
           </p>
-          <Button
-            onClick={() =>
-              window.open(
-                "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/avi_resume.PNG-Jo0yluWd71exaay0xHmkZEFQ8Fr5aj.png",
-                "_blank",
-              )
-            }
-            className="mt-4 bg-gradient-to-r from-[#FFB6A3] to-[#FFA07A] text-white hover:opacity-90 dark:from-purple-500 dark:to-purple-400"
-          >
-            Resume
-          </Button>
+          <div className="flex justify-center md:justify-start">
+            <Button
+              onClick={() =>
+                window.open(
+                  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/avi_resume.PNG-Jo0yluWd71exaay0xHmkZEFQ8Fr5aj.png",
+                  "_blank"
+                )
+              }
+              className="mt-4 bg-gradient-to-r from-[#FFB6A3] to-[#FFA07A] text-white hover:opacity-90 dark:from-purple-500 dark:to-purple-400"
+            >
+              Resume
+            </Button>
+          </div>
         </motion.div>
         <motion.div className="flex justify-center">
           <motion.div className="relative w-[320px] h-[320px] flex items-center justify-center">
             <div
               className="relative w-full h-full overflow-hidden"
               style={{
-                clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
-                background: "linear-gradient(45deg, var(--primary) 0%, var(--accent) 100%)",
+                clipPath:
+                  "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+                background:
+                  "linear-gradient(45deg, var(--primary) 0%, var(--accent) 100%)",
               }}
             >
               <div
                 className="absolute inset-[3px] bg-background"
                 style={{
-                  clipPath: "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
+                  clipPath:
+                    "polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)",
                 }}
               >
                 <Image
@@ -70,6 +79,5 @@ export function Hero() {
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
-

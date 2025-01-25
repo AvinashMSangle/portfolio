@@ -4,6 +4,9 @@ import { motion } from "framer-motion"
 import { ThemeToggle } from "./theme-toggle"
 import { Link as ScrollLink } from "react-scroll"
 import { useState } from "react"
+import { Menu } from "lucide-react"
+import { Button } from "@/components/ui/button"
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet"
 
 export function Header() {
   const navItems = ["About", "Skills", "Projects", "Contact"]
@@ -26,7 +29,7 @@ export function Header() {
           </ScrollLink>
         </motion.div>
         <div className="flex items-center gap-4">
-          <nav className="flex items-center gap-4">
+          <nav className="hidden md:flex items-center gap-4">
             {navItems.map((item) => (
               <motion.div key={item} whileHover={{ scale: 1.1 }} whileTap={{ scale: 0.95 }}>
                 <ScrollLink
@@ -47,6 +50,40 @@ export function Header() {
             ))}
           </nav>
           <ThemeToggle />
+          <Sheet>
+            <SheetTrigger asChild className="md:hidden">
+              <Button variant="outline" size="icon">
+                <Menu className="h-5 w-5" />
+                <span className="sr-only">Toggle menu</span>
+              </Button>
+            </SheetTrigger>
+            <SheetContent side="right" className="w-[300px] sm:w-[400px]">
+              <SheetHeader>
+                <SheetTitle className="text-left bg-gradient-to-r from-[#FFB6A3] to-[#FFA07A] dark:from-purple-500 dark:to-purple-400 bg-clip-text text-transparent">
+                  Navigation
+                </SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col gap-4 mt-8">
+                {navItems.map((item) => (
+                  <ScrollLink
+                    key={item}
+                    to={item.toLowerCase()}
+                    smooth={true}
+                    duration={500}
+                    hashSpy={true}
+                    className={`transition-colors cursor-pointer p-2 rounded-md ${
+                      activeSection === item.toLowerCase()
+                        ? "bg-gradient-to-r from-[#FFB6A3] to-[#FFA07A] text-white dark:from-purple-500 dark:to-purple-400"
+                        : "text-muted-foreground hover:bg-secondary"
+                    }`}
+                    onClick={() => setActiveSection(item.toLowerCase())}
+                  >
+                    {item}
+                  </ScrollLink>
+                ))}
+              </nav>
+            </SheetContent>
+          </Sheet>
         </div>
       </div>
     </motion.header>
