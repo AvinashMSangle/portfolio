@@ -36,15 +36,12 @@ export function Hero() {
           </p>
           <div className="flex justify-center md:justify-start">
             <Button
-              onClick={() =>
-                window.open(
-                  "https://hebbkx1anhila5yf.public.blob.vercel-storage.com/avi_resume.PNG-Jo0yluWd71exaay0xHmkZEFQ8Fr5aj.png",
-                  "_blank"
-                )
-              }
               className="mt-4 bg-gradient-to-r from-[#FFB6A3] to-[#FFA07A] text-white hover:opacity-90 dark:from-purple-500 dark:to-purple-400"
+              asChild
             >
-              Resume
+              <a href="/Avi_Resume.pdf" target="_blank" rel="noopener noreferrer">
+                Resume
+              </a>
             </Button>
           </div>
         </motion.div>
